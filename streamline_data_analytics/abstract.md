@@ -1,10 +1,10 @@
 # Streamline the workflow for data analytics (R caret vs. Azure ML studio)
-People always say eighty percent of data scientist's time is spent on data exploration and cleaning data. Usually you cannot get too much help from other folks, since the specific problems are very different from each other.   
-However, situation dramatically changes after you obtaining a tidy data set. A lot of tools like R caret library, Azure ML studio are there helping you to make the model building process easier. They streamline the workflow of data analytics by embedding several main processes like sampling, feature selection, parameter tuning, etc.   
+  People always say eighty percent of data scientist's time is spent on data exploration and cleaning data. Usually you cannot get too much help from other folks in these steps, since the specific problems are very different from each other.   
+  However, situation dramatically changes after you obtaining a tidy data set. A lot of tools like R caret library, Azure ML Studio are just there helping you to make the model-building process easier. They streamline the workflow of data analytics by embedding several main processes like sampling, feature selection, parameter tuning, etc.   
 In this meetup, we would talk about how such tools serve the data scientists by introducing:  
 * The necessities of different processes of data analytics, including sampling, feature selection, parameter tuning of models, regularization, etc.
-* Using R caret to build an optimized model for several data sets
-* Using Azure ML studio to build an optimized model for several data sets
+* Using R caret to build an optimized model for several data sets;
+* Using Azure ML studio to build an optimized model for several data sets;
 * Comparison between caret and Azure ML studio, and introducing some other similar streamline tools.  
 
 ## reference: 
