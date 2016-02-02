@@ -1,4 +1,4 @@
-# Requirements
+# Building a Real-time Sentiment Pipeline for Live Tweets using Python, R, & Azure
 * Twitter Accont + Twitter App setup (https://apps.twitter.com/)
 * Anaconda 3.5 or Python 3.5 Installed
 * Azure subscription or free trial account
@@ -9,15 +9,15 @@
 * PowerBI.com account (for Dashboard portion)
 * .NET up to date + windows (for testing portion)
 
-# Cloning the Repo for Code & Materials
+## Cloning the Repo for Code & Materials
 ```
 git clone https://www.github.com/datasciencedojo/meetup.git
 ```
 Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R, & Azure
 
-# The Predictive Model
+## The Predictive Model
 
-## Supervised Twitter Dataset
+### Supervised Twitter Dataset
 * Reader Module:
 	* Data source: Azure Blob Storage
 	* Authentication type: PublicOrSAS
@@ -26,11 +26,11 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 	* URI has header row: Checked
 * Import and save dataset
 
-## Preprocessing & Cleaning
+### Preprocessing & Cleaning
 	* Metadata Editor: Cast categorical sentiment_label
 	* Group Categorical Values: Casting '0' as Negative, '4' as positive
 
-## Algorithm Selection
+### Algorithm Selection
 	* [Algorithm Cheat Sheet](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/)
 	* [Beginer's Guide to Choosing Algorithms](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-choice/)
 	* [Azure ML's Support Vector Machines](https://msdn.microsoft.com/en-us/library/azure/dn905835.aspx)
