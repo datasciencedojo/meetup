@@ -1,4 +1,6 @@
 # Building a Real-time Sentiment Pipeline for Live Tweets using Python, R, & Azure
+
+## Requirements
 * Twitter Accont + Twitter App setup (https://apps.twitter.com/)
 * Anaconda 3.5 or Python 3.5 Installed
 * Azure subscription or free trial account
