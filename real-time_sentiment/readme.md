@@ -20,7 +20,7 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 ## The Predictive Model
 
 ### Supervised Twitter Dataset
-* Reader Module:
+* Azure ML Reader Module:
 	* Data source: Azure Blob Storage
 	* Authentication type: PublicOrSAS
 	* URI: http://azuremlsampleexperiments.blob.core.windows.net/datasets/Sentiment140.tenPercent.sample.tweets.tsv
@@ -29,11 +29,16 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 * Import and save dataset
 
 ### Preprocessing & Cleaning
-* Metadata Editor: Cast categorical sentiment_label
-* Group Categorical Values: Casting '0' as Negative, '4' as positive
+* Azure ML Metadata Editor: Cast categorical sentiment_label
+* Azure ML Group Categorical Values: Casting '0' as Negative, '4' as positive
 
 ### Algorithm Selection
 * [Algorithm Cheat Sheet](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/)
 * [Beginer's Guide to Choosing Algorithms](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-choice/)
 * [Azure ML's Support Vector Machines](https://msdn.microsoft.com/en-us/library/azure/dn905835.aspx)
 * [Support Vector Machines in General](https://en.wikipedia.org/wiki/Support_vector_machine)
+
+### Text Processing
+* Filtering
+	* Stop words
+	* Stemming and Lemmatization
