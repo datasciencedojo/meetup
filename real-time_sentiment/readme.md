@@ -40,5 +40,8 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 
 ### Text Processing
 * Filtering
-	* Stop words
-	* Stemming and Lemmatization
+	* Removing stop words (Stop words list)
+	* Removing pecial characters
+	* Replace numbers
+	* Globally conform to lower case
+	* Stemming and lemmatization
