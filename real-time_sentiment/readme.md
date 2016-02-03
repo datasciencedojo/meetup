@@ -71,3 +71,14 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 * [Twitter API for all languages](https://dev.twitter.com/overview/api/twitter-libraries)
 * [Tweepy Python Package](https://github.com/tweepy/tweepy)
 * [Streaming with Tweepy](http://tweepy.readthedocs.org/en/v3.2.0/streaming_how_to.html?highlight=stream)
+
+### Azure Event Hub
+* Create an Service Bus Namespace
+* Create an Azure Event Hub
+	* Create a send key (to push data to)
+	* Create a manage key (stream processor)
+	* Create a listen key (to subscribe to)
+* [Pushing to Azure Event Hub](http://azure-sdk-for-python.readthedocs.org/en/latest/servicebus.html)
+
+Deploy the Model
+Hook up Stream Processors
