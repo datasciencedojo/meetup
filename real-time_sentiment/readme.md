@@ -79,6 +79,7 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 	* Create a manage key (stream processor)
 	* Create a listen key (to subscribe to)
 * [Pushing to Azure Event Hub](http://azure-sdk-for-python.readthedocs.org/en/latest/servicebus.html)
+* [Viewing inside of an Azure Event Hub](https://azure.microsoft.com/en-us/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
 
 Deploy the Model
 Hook up Stream Processors
