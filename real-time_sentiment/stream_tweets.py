@@ -1,4 +1,5 @@
 import tweepy
+import json
 
 # my keys
 consumer_token = ''
@@ -18,7 +19,9 @@ class MyStreamListener(tweepy.StreamListener):
         print(status.text)
 
     def on_data(self, twitter_data):
-        print(twitter_data)
+        print(twitter_data.text)
+        # tweetJSON = json.loads(twitter_data)
+        # print(tweetJSON['text'].encode("utf-8"))
 
 
 myStreamListener = MyStreamListener()
