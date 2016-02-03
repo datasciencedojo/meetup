@@ -1,7 +1,7 @@
 # Building a Real-time Sentiment Pipeline for Live Tweets using Python, R, & Azure
 
 ## Requirements
-* Twitter Accont + Twitter App setup (https://apps.twitter.com/)
+* Twitter Account + Twitter App setup (https://apps.twitter.com/)
 * Anaconda 3.5 or Python 3.5 Installed
 * Azure subscription or free trial account
 	* [30 day free trial](https://azure.microsoft.com/en-us/pricing/free-trial/)
@@ -46,7 +46,7 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 	* Azure ML's Project Columns module
 * Feature Selection & Filtering
 	* Pick only the most X relevant columns/words to train on. 
-	* Using Azure ML's [Filter based Selection](https://msdn.microsoft.com/library/azure/818b356b-045c-412b-aa12-94a1d2dad90f) module
+	* Using Azure ML's [Filter based Selection](https://msdn.microsoft.com/library/azure/818b356b-045c-412b-aa12-94a1d2dad90f) module, set to Pearson's correlation to select the top 5000 most correlated columns
 * Normalize the Term Frequency Matrix
 	* Text processing best practice, but does not matter too much for Tweets
 	* Normalize Data Module: Min/Max for all numeric columns
@@ -61,3 +61,13 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 * Train the model
 * Score the trained model against a validation set
 * Evaluate the performance, maximaxing accuracy in this case
+
+### Twitter App
+* [Creating a Twitter Account] (https://www.hashtags.org/platforms/twitter/how-to-create-a-twitter-account/)
+* [Creating a Twitter App](http://www.ning.com/help/?p=4955)
+* Get your [Twitter app's](https://apps.twitter.com/) OAuth keys and tokens.
+
+### Twitter API with Python
+* [Twitter API for all languages](https://dev.twitter.com/overview/api/twitter-libraries)
+* [Tweepy Python Package](https://github.com/tweepy/tweepy)
+* [Streaming with Tweepy](http://tweepy.readthedocs.org/en/v3.2.0/streaming_how_to.html?highlight=stream)
