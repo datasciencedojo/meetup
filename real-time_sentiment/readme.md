@@ -57,6 +57,7 @@ Folder: Building a Real-time Sentiment Pipeline for Live Tweets using Python, R,
 * [Azure ML's Support Vector Machines](https://msdn.microsoft.com/en-us/library/azure/dn905835.aspx)
 * [Support Vector Machines in General](https://en.wikipedia.org/wiki/Support_vector_machine)
 
+### Model Building
 * Train the model
 * Score the trained model against a validation set
 * Evaluate the performance, maximaxing accuracy in this case
