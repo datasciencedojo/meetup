@@ -106,3 +106,10 @@ If you want to submit your vw model to the [Kaggle](http://www.kaggle.com) compe
 python convert_vw_to_kaggle.py
 ```
 Now you should have a new file called kaggle_preds.csv that you can submit to the Kaggle Titanic competition. 
+
+## Resources
+[VowPal Wabbit Tutorial for the Uninitiated](http://zinkov.com/posts/2013-08-13-vowpal-tutorial/)
+This tutorial has fairly easy-to-understand explanations of many of the command line options. 
+
+[Technical Tricks of VowPal Wabbit](http://www.slideshare.net/jakehofman/technical-tricks-of-vowpal-wabbit)
+This is technical overview of how the program works (lots of math). 

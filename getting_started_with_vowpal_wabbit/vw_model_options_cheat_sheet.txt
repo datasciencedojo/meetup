@@ -12,12 +12,14 @@ Reports loss as binary classification with -1,1 labels
 
 --passes 20
 Number of Training Passes
+Other options: increase or decrease the number
 
 -c
 Use a cache.
 
 -q
 Create and use quadratic features
+Other options: --cubic arg (Create and use cubic features) --ngram arg (Generate ngrams)
 
 ff
 --adaptive
@@ -25,12 +27,15 @@ use adaptive, individual learning rates
 
 --normalized
 use per feature normalized updates.
+Other options: --invariant (use safe/important aware updates) --bfgs (use nonlinear optimization) --ftrl (use FTRL-Proximal optimization)
 
 --l1 arg (=0)                
 l_1 lambda (L1 regularization)
+Other options: adjust number
 
 --l2 arg (=0)                
 l_2 lambda (L2 regularization)
+Other options: adjust number
 
 -b
 number of bits in the feature table
