@@ -26,7 +26,6 @@ Its scalability is aided by several factors:
 * Linux Operating System (Ubuntu, Debian etc.)
 * Anaconda 3.5 or Python 3.5
 * Github.com account
-* Git Bash (to pull repository)
 * Text editor
 
 ## Installation
