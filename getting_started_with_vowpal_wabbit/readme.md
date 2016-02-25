@@ -4,8 +4,11 @@ The code and tutorials are provided in conjunction with a Data Science Dojo Meet
 
 ## Overview of VowPal Wabbit
 The Vowpal Wabbit (VW) project is a fast out-of-core learning system sponsored by Yahoo! Research and written by John Langford along with a number of contributors.
+
 Via parallel learning, it can exceed the throughput of any single machine network interface when doing linear learning, a first amongst learning algorithms.
+
 What does it do well? Online learning & scalable solutions
+
 Its scalability is aided by several factors:
 * Out-of-core learning (no need to load all data into memory)
 * Exploiting multi-core CPUs (input and learning are done in separate threads)
@@ -38,8 +41,11 @@ Folder: Getting Started with VowPal Wabbit
 ## Installation
 
 VowPal Wabbit was developed to be run on the open source Debian operating system. Therefore, it is fairly simple to install on Linux operating systems, like Ubuntu. Ubuntu installation is demonstrated in the meet-up. 
-If you have a Windows operating system and would like to install VowPal Wabbit, [this tutorial] (http://mlwave.com/install-vowpal-wabbit-on-windows-and-cygwin/) may be helpful. It will take about 20 minutes to complete if you donâ€™t have the Cygwin compiling packages already installed. Some further troubleshooting may be required. 
+
+If you have a Windows operating system and would like to install VowPal Wabbit, [this tutorial] (http://mlwave.com/install-vowpal-wabbit-on-windows-and-cygwin/) may be helpful. It will take about 20 minutes to complete if you don’t have the Cygwin compiling packages already installed. Some further troubleshooting may be required. 
+
 To install on Ubuntu, the following packages need to be installed:
+
 (Ubuntu 12.04)
 
 ```
