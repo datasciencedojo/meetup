@@ -52,9 +52,7 @@ Use this code to install vw on a Linux operating system
 
 ```
 git clone git://github.com/JohnLangford/vowpal_wabbit.git
-cd vowpal_wabbit
-./configure
-make
+sudo apt-get install vowpal-wabbit
 ```
 Check to make sure that it worked. This code should generate a list of commands. 
 ```
@@ -64,7 +62,9 @@ vw --help
 ## Cloning the Repository for Code & Materials 
 
 ```
-$ git clone https://www.github.com/datasciencedojo/meetup.git
+$ git clone git://github.com/datasciencedojo/meetup.git
+cd meetup
+cd getting_started_with_vowpal_wabbit
 ```
 Folder: Getting Started with VowPal Wabbit
 
@@ -95,7 +95,7 @@ A explanation of each command is provided in vw_model_options_cheat_sheet.txt
 Now we want our model to predict whether the test.csv passengers will survive or not. 
 
 ```
-vw -d test_titanic.vw -t -i model.vw -p preds_titanic.txt
+vw -d test.vw -t -i model.vw -p preds_titanic.txt
 ```
 This has saved the predictions into a text file. 
 
@@ -105,3 +105,4 @@ If you want to submit your vw model to the [Kaggle](http://www.kaggle.com) compe
 ```
 python convert_vw_to_kaggle.py
 ```
+Now you should have a new file called kaggle_preds.csv that you can submit to the Kaggle Titanic competition. 
