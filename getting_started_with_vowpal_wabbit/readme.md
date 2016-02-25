@@ -102,7 +102,7 @@ This has saved the predictions into a text file.
 
 ### Converting format
 
-If you want to submit your vw model to the [Kaggle](http://www.kaggle.com) competition, use the provided python script to do so. 
+If you want to submit your vw model to the [Kaggle](http://www.kaggle.com) competition, use the provided python script to convert to the Kaggle format. 
 ```
 python convert_vw_to_kaggle.py
 ```
