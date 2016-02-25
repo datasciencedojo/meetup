@@ -29,15 +29,6 @@ Its scalability is aided by several factors:
 * Git Bash (to pull repository)
 * Text editor
 
-## Cloning the Repository for Code & Materials 
-
-What things you need to install the software and how to install them
-
-```
-$ git clone https://www.github.com/datasciencedojo/meetup.git
-```
-Folder: Getting Started with VowPal Wabbit
-
 ## Installation
 
 VowPal Wabbit was developed to be run on the open source Debian operating system. Therefore, it is fairly simple to install on Linux operating systems, like Ubuntu. Ubuntu installation is demonstrated in the meet-up. 
@@ -45,6 +36,7 @@ VowPal Wabbit was developed to be run on the open source Debian operating system
 If you have a Windows operating system and would like to install VowPal Wabbit, [this tutorial] (http://mlwave.com/install-vowpal-wabbit-on-windows-and-cygwin/) may be helpful. It will take about 20 minutes to complete if you don’t have the Cygwin compiling packages already installed. Some further troubleshooting may be required. 
 
 To install on Ubuntu, the following packages need to be installed:
+
 
 (Ubuntu 12.04)
 
@@ -69,6 +61,13 @@ Check to make sure that it worked. This code should generate a list of commands.
 ```
 vw --help
 ```
+
+## Cloning the Repository for Code & Materials 
+
+```
+$ git clone https://www.github.com/datasciencedojo/meetup.git
+```
+Folder: Getting Started with VowPal Wabbit
 
 ## Titanic Predictive Model
 
