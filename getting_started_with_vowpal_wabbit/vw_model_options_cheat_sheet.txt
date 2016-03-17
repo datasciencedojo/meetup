@@ -1,0 +1,56 @@
+from tutorial:
+
+vw train_titanic.vw -f model.vw --binary --passes 20 
+-c -q ff --adaptive --normalized --l1 0.00000001 
+--l2 0.0000001 -b 24
+
+-f 
+Use the -f option to write the weight vector to a file named after its argument.
+
+--binary
+Reports loss as binary classification with -1,1 labels
+
+--passes 20
+Number of Training Passes
+Other options: increase or decrease the number
+
+-c
+Use a cache.
+
+-q
+Create and use quadratic features
+Other options: --cubic arg (Create and use cubic features) --ngram arg (Generate ngrams)
+
+ff
+--adaptive
+use adaptive, individual learning rates
+
+--normalized
+use per feature normalized updates.
+Other options: --invariant (use safe/important aware updates) --bfgs (use nonlinear optimization) --ftrl (use FTRL-Proximal optimization)
+
+--l1 arg (=0)                
+l_1 lambda (L1 regularization)
+Other options: adjust number
+
+--l2 arg (=0)                
+l_2 lambda (L2 regularization)
+Other options: adjust number
+
+-b
+number of bits in the feature table
+
+vw -d test_titanic.vw -t -i model.vw -p preds_titanic.txt
+
+-d
+Example set
+
+-t
+Ignore lable information and just text
+
+-i
+Initial regressor(s) to load into memory (arg is filename)
+
+-p
+File to output predictions to
+
