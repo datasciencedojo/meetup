@@ -5,10 +5,11 @@ Meetup Page: [http://www.meetup.com/data-science-dojo/events/231449206/](http://
 ## Requirements
 * Azure subscription or free trial account
 	* [30 day free trial](https://azure.microsoft.com/en-us/pricing/free-trial/)
-* Text Editor, I'll be using [Sublime Text 3]()
+* Text Editor, I'll be using [Sublime Text 3](https://www.sublimetext.com/3)
 * Github.com account (to recieve code)
-* PowerBI.com account (for Dashboard portion)
-* .NET up to date + windows (for testing portion)
+* [R Installed](https://cran.r-project.org/bin/windows/base/)
+* [RStudio](https://www.rstudio.com/products/rstudio/download/)
+* Windows Only: [Putty](https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe)
 
 ## Cloning the Repo for Code & Materials
 ```
