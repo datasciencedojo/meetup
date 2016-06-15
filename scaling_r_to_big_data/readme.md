@@ -80,4 +80,4 @@ Folder: scaling\_r\_to\_big\_data
     | ------------------ | --------------------- |
     | ![Creating indicator on startboard](/scaling_r_to_big_data/media/provisioning.png) | ![Created cluster tile](/scaling_r_to_big_data/media/provisioned.png) |
 
-    > [AZURE.NOTE] It will take some time for the cluster to be created, usually around 15 minutes. Use the tile on the Startboard, or the **Notifications** entry on the left of the page to check on the creation process.
+    > [AZURE.NOTE] It will take some time for the cluster to be created, usually around 15~40 minutes. Use the tile on the Startboard, or the **Notifications** entry on the left of the page to check on the creation process.
