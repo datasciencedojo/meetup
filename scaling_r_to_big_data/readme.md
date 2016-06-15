@@ -89,7 +89,7 @@ Please be aware that R Server is not installed on the head/master/name node, but
 
 1. Find the edge node SSH address by selecting your cluster then, __All Settings__, __Apps__, and __RServer__. Copy the SSH endpoint.
 
-    ![Image of the SSH Endpoint for the edge node](./media/hdinsight-getting-started-with-r/sshendpoint.png)
+    ![Image of the SSH Endpoint for the edge node](/scaling_r_to_big_data/media/sshendpoint.png)
 
 2. Connect to the edge node using an SSH client.
     * [Windows: Putty](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
