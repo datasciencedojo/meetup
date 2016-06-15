@@ -22,11 +22,11 @@ Folder: scaling\_r\_to\_big\_data
 
 2. Select __NEW__, __Data + Analytics__, and then __HDInsight__.
 
-    ![Image of creating a new cluster](/media/newcluster.png)
+    ![Image of creating a new cluster](/scaling_r_to_big_data/media/newcluster.png)
 
 3. Enter a name for the cluster in the __Cluster Name__ field. If you have multiple Azure subscriptions, use the __Subscription__ entry to select the one you want to use.
 
-    ![Cluster name and subscription selections](/media/clustername.png)
+    ![Cluster name and subscription selections](/scaling_r_to_big_data/media/clustername.png)
 
 4. Select __Select Cluster Type__. On the __Cluster Type__ blade, select the following options:
 
@@ -36,7 +36,7 @@ Folder: scaling\_r\_to\_big\_data
 
     Leave the other options at the default values, then use the __Select__ button to save the cluster type.
     
-    ![Cluster type blade screenshot](/media/clustertypeconfig.png)
+    ![Cluster type blade screenshot](/scaling_r_to_big_data/media/clustertypeconfig.png)
     
     > [AZURE.NOTE] You can also add R Server to other HDInsight cluster types (such as Hadoop or HBase,) by selecting the cluster type, and then selecting __Premium__.
 
@@ -52,7 +52,7 @@ Folder: scaling\_r\_to\_big\_data
     
     Use the __Select__ button to save the credentials.
     
-    ![Credentials blade](/media/clustercredentials.png)
+    ![Credentials blade](/scaling_r_to_big_data/media/clustercredentials.png)
 
 7. Select **Data Source** to select a data source for the cluster. Either select an existing storage account by selecting __Select storage account__ and then selecting the account, or create a new account using the __New__ link in the __Select storage account__ section.
 
@@ -66,11 +66,11 @@ Folder: scaling\_r\_to\_big\_data
 
     Use the **Select** button to save the data source configuration.
     
-    ![Data source blade](/media/datastore.png)
+    ![Data source blade](/scaling_r_to_big_data/media/datastore.png)
 
 8. Select **Node Pricing Tiers** to display information about the nodes that will be created for this cluster. Unless you know that you'll need a larger cluster, leave the number of worker nodes at the default of `4`. The estimated cost of the cluster will be shown within the blade.
 
-    ![Node pricing tiers blade](/media/pricingtier.png)
+    ![Node pricing tiers blade](/scaling_r_to_big_data/media/pricingtier.png)
 
     Use the **Select** button to save the node pricing configuration.
     
@@ -78,6 +78,6 @@ Folder: scaling\_r\_to\_big\_data
 
     | While creating | Creation complete |
     | ------------------ | --------------------- |
-    | ![Creating indicator on startboard](/media/provisioning.png) | ![Created cluster tile](/media/provisioned.png) |
+    | ![Creating indicator on startboard](/scaling_r_to_big_data/media/provisioning.png) | ![Created cluster tile](/scaling_r_to_big_data/media/provisioned.png) |
 
     > [AZURE.NOTE] It will take some time for the cluster to be created, usually around 15 minutes. Use the tile on the Startboard, or the **Notifications** entry on the left of the page to check on the creation process.
