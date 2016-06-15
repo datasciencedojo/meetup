@@ -18,7 +18,10 @@ Folder: scaling\_r\_to\_big\_data
 
 ## The data
 
-Public dataset, ~1.2 gb.
+Public dataset of air travel delays:
+~1.2 gb
+~12.5 million rows
+44 columns
 [https://packages.revolutionanalytics.com/datasets/AirOnTimeCSV2012/](https://packages.revolutionanalytics.com/datasets/AirOnTimeCSV2012/)
 
 ## Setting up an R Cluster
