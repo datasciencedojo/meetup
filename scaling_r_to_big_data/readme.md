@@ -156,7 +156,7 @@ Source: [Microsoft](https://azure.microsoft.com/en-us/documentation/articles/hdi
             * **Source port** - The port on the client that you wish to forward. For example, **8787**.
             * **Destination** - The destination that must be mapped to the local client machine. For example, **localhost:8787**.
 
-            ![Create an SSH tunnel](./media/hdinsight-hadoop-r-server-install-r-studio/createsshtunnel.png "Create an SSH tunnel")
+            ![Create an SSH tunnel](/scaling_r_to_big_data/media/createsshtunnel.png "Create an SSH tunnel")
 
         4. Click **Add** to add the settings, and then click **Open** to open an SSH connection.
         5. When prompted, log in to the server. This will establish an SSH session and enable the tunnel.
@@ -167,7 +167,7 @@ Source: [Microsoft](https://azure.microsoft.com/en-us/documentation/articles/hdi
 
 8. You will be prompted to enter the SSH username and password to connect to the cluster. If you used an SSH key while creating the cluster, you must enter the password you created in step 5 above.
 
-    ![Connect to R Studio](./media/hdinsight-hadoop-r-server-install-r-studio/connecttostudio.png "Create an SSH tunnel")
+    ![Connect to R Studio](/scaling_r_to_big_data/media/connecttostudio.png "Create an SSH tunnel")
 
 9. To test whether the RStudio installation was successful, you can run a test script that executes R based MapReduce and Spark jobs on the cluster. Go back to the SSH console and enter the following commands to download the test script to run in RStudio.
 
@@ -181,4 +181,4 @@ Source: [Microsoft](https://azure.microsoft.com/en-us/documentation/articles/hdi
 
 10. In RStudio, you will see the test script you downloaded. Double click the file to open it, select the contents of the file, and then click **Run**. You should see the output in the **Console** pane.
  
-    ![Test the installation](./media/hdinsight-hadoop-r-server-install-r-studio/test-r-script.png "Test the installation")
+    ![Test the installation](/scaling_r_to_big_data/media/test-r-script.png "Test the installation")
