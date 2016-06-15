@@ -244,8 +244,6 @@ varNames <- names(airlineColInfo)
 
 # Define the text data source in hdfs
 airOnTimeData <- RxTextData(inputDir, colInfo = airlineColInfo, varsToKeep = varNames, fileSystem = hdfsFS)
-# Define the text data source in local system
-airOnTimeDataLocal <- RxTextData(source, colInfo = airlineColInfo, varsToKeep = varNames)
 
 # formula to use
 formula = "ARR_DEL15 ~ ORIGIN + DAY_OF_WEEK + DEP_TIME + DEST"
@@ -256,7 +254,7 @@ rxSetComputeContext(myContext)
 
 # Run a logistic regression
 system.time(
-    myModel <- rxLogit(formula, data = airOnTimeDataLocal)
+    myModel <- rxLogit(formula, data = airOnTimeData)
 )
 # Display a summary 
 summary(myModel)
@@ -264,7 +262,7 @@ summary(myModel)
 # Random forest
 # Help: http://www.rdocumentation.org/packages/RevoScaleR/functions/rxDForest
 system.time(
-    myModel <- rxDForest(formula, data = airOnTimeDataLocal)
+    myModel <- rxDForest(formula, data = airOnTimeData)
 )
 # Display a summary 
 summary(myModel)
