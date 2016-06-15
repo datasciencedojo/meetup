@@ -1,4 +1,6 @@
-# Building a Real-time Sentiment Pipeline for Live Tweets using Python, R, & Azure
+# Scale R to Big Data Using Hadoop and Spark
+
+Meetup Page: [http://www.meetup.com/data-science-dojo/events/231449206/](http://www.meetup.com/data-science-dojo/events/231449206/)
 
 ## Requirements
 * Azure subscription or free trial account
@@ -15,8 +17,6 @@ git clone https://www.github.com/datasciencedojo/meetup.git
 Folder: scaling\_r\_to\_big\_data
 
 ## Setting up an R Cluster
-
-> [AZURE.NOTE] The steps in this document create an R Server on HDInsight using basic configuration information. For other cluster configuration settings (such as adding additional storage accounts, using an Azure Virtual Network, or creating a metastore for Hive,) see [Create Linux-based HDInsight clusters](hdinsight-hadoop-provision-linux-clusters.md).
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
