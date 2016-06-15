@@ -20,15 +20,19 @@ Folder: scaling\_r\_to\_big\_data
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
-2. Select __NEW__, __Data + Analytics__, and then __HDInsight__.
+2. Select __NEW__, then search for "r server". A search blade will appear to the right.
 
-    ![Image of creating a new cluster](/scaling_r_to_big_data/media/searchhdinsight.png)
+    ![Searching for R Server](/scaling_r_to_big_data/media/searchhdinsight.png)
 
-3. Enter a name for the cluster in the __Cluster Name__ field. If you have multiple Azure subscriptions, use the __Subscription__ entry to select the one you want to use.
+3. Select __R Server for HDInsight__.
+
+    ![Selecting R Server for HDInsight](/scaling_r_to_big_data/media/selectrserver.png)
+
+4. Enter a name for the cluster in the __Cluster Name__ field. If you have multiple Azure subscriptions, use the __Subscription__ entry to select the one you want to use.
 
     ![Cluster name and subscription selections](/scaling_r_to_big_data/media/clustername.png)
 
-4. Select __Select Cluster Type__. On the __Cluster Type__ blade, select the following options:
+5. Select __Select Cluster Type__. On the __Cluster Type__ blade, select the following options:
 
     * __Cluster Type__: R Server on Spark
     
@@ -40,13 +44,13 @@ Folder: scaling\_r\_to\_big\_data
     
     > [AZURE.NOTE] You can also add R Server to other HDInsight cluster types (such as Hadoop or HBase,) by selecting the cluster type, and then selecting __Premium__.
 
-5. Select **Resource Group** to see a list of existing resource groups and then select the one to create the cluster in. Or, you can select **Create New** and then enter the name of the new resource group. A green check will appear to indicate that the new group name is available.
+6. Select **Resource Group** to see a list of existing resource groups and then select the one to create the cluster in. Or, you can select **Create New** and then enter the name of the new resource group. A green check will appear to indicate that the new group name is available.
 
     > [AZURE.NOTE] This entry will default to one of your existing resource groups, if any are available.
     
     Use the __Select__ button to save the resource group.
 
-6. Select **Credentials**, then enter a **Cluster Login Username** and **Cluster Login Password**.
+7. Select **Credentials**, then enter a **Cluster Login Username** and **Cluster Login Password**.
 
     Enter an __SSH Username__ and select __Password__, then enter the __SSH Password__ to configure the SSH account. SSH is used to remotely connect to the cluster using a Secure Shell (SSH) client.
     
@@ -54,7 +58,7 @@ Folder: scaling\_r\_to\_big\_data
     
     ![Credentials blade](/scaling_r_to_big_data/media/clustercredentials.png)
 
-7. Select **Data Source** to select a data source for the cluster. Either select an existing storage account by selecting __Select storage account__ and then selecting the account, or create a new account using the __New__ link in the __Select storage account__ section.
+8. Select **Data Source** to select a data source for the cluster. Either select an existing storage account by selecting __Select storage account__ and then selecting the account, or create a new account using the __New__ link in the __Select storage account__ section.
 
     If you select __New__, you must enter a name for the new storage account. A green check will appear if the name is accepted.
 
@@ -68,13 +72,13 @@ Folder: scaling\_r\_to\_big\_data
     
     ![Data source blade](/scaling_r_to_big_data/media/datastore.png)
 
-8. Select **Node Pricing Tiers** to display information about the nodes that will be created for this cluster. Unless you know that you'll need a larger cluster, leave the number of worker nodes at the default of `4`. The estimated cost of the cluster will be shown within the blade.
+9. Select **Node Pricing Tiers** to display information about the nodes that will be created for this cluster. Unless you know that you'll need a larger cluster, leave the number of worker nodes at the default of `4`. The estimated cost of the cluster will be shown within the blade.
 
     ![Node pricing tiers blade](/scaling_r_to_big_data/media/pricingtier.png)
 
     Use the **Select** button to save the node pricing configuration.
     
-9. On the **New HDInsight Cluster** blade, make sure that **Pin to Startboard** is selected, and then select **Create**. This will create the cluster and add a tile for it to the Startboard of your Azure Portal. The icon will indicate that the cluster is creating, and will change to display the HDInsight icon once creation has completed.
+10. On the **New HDInsight Cluster** blade, make sure that **Pin to Startboard** is selected, and then select **Create**. This will create the cluster and add a tile for it to the Startboard of your Azure Portal. The icon will indicate that the cluster is creating, and will change to display the HDInsight icon once creation has completed.
 
     | While creating | Creation complete |
     | ------------------ | --------------------- |
