@@ -271,8 +271,16 @@ summary(myModel)
 
 # Other Models: http://www.rdocumentation.org/packages/RevoScaleR
 
+# Converts the distributed forest to a normal random forest
 myModel.Forest <- as.randomForest(myModel)
 
 # Saving your forest
 save(myModel.Forest,file = "awesomeModel.RData")
+```
+
+Download the RDATA file. Load it to your local machine.
+```
+# install.packages(randomForest)
+library(randomForest)
+my.local.forest <- load("awesomeModel.RData")
 ```
