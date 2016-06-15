@@ -28,6 +28,10 @@ Folder: scaling\_r\_to\_big\_data
 
     ![Selecting R Server for HDInsight](/scaling_r_to_big_data/media/selectrserver.png)
 
+4. Select __Create__ in "R Server for HDInsight" blade.
+
+    ![Select create](/scaling_r_to_big_data/media/selectcreate.png)
+
 4. Enter a name for the cluster in the __Cluster Name__ field. If you have multiple Azure subscriptions, use the __Subscription__ entry to select the one you want to use.
 
     ![Cluster name and subscription selections](/scaling_r_to_big_data/media/clustername.png)
