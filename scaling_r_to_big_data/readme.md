@@ -22,7 +22,7 @@ Folder: scaling\_r\_to\_big\_data
 
 2. Select __NEW__, __Data + Analytics__, and then __HDInsight__.
 
-    ![Image of creating a new cluster](/scaling_r_to_big_data/media/newcluster.png)
+    ![Image of creating a new cluster](/scaling_r_to_big_data/media/searchhdinsight.png)
 
 3. Enter a name for the cluster in the __Cluster Name__ field. If you have multiple Azure subscriptions, use the __Subscription__ entry to select the one you want to use.
 
