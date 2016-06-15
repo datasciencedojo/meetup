@@ -92,6 +92,7 @@ Please be aware that R Server is not installed on the head/master/name node, but
     ![Image of the SSH Endpoint for the edge node](/scaling_r_to_big_data/media/sshendpoint.png)
 
 2. Connect to the edge node using an SSH client.
+    You can ignore SSH keys for the purposes of this lab. In production it is highly recommended that you use SSH keys rather than username/password authentication.
     * [Windows: Putty](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
     * [Mac or Linux: ssh client in terminal](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
@@ -101,3 +102,83 @@ Please be aware that R Server is not installed on the head/master/name node, but
 ```
 R
 ```
+
+To exit the R Console:
+```
+quit()
+```
+### Installing R Studio Server into the Cluster
+
+Source: [Microsoft](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-r-server-install-r-studio/)
+
+2. Once you are connected, become a root user on the cluster. In the SSH session, use the following command.
+
+        sudo su -
+
+3. Download the custom script to install RStudio. Use the following command.
+
+        wget http://mrsactionscripts.blob.core.windows.net/rstudio-server-community-v01/InstallRStudio.sh
+
+4. Change the permissions on the custom script file and run the script. Use the following commands.
+
+        chmod 755 InstallRStudio.sh
+        ./InstallRStudio.sh
+
+5. If you used an SSH password while creating an HDInsight cluster with R Server, you can skip this step and proceed to the next. If you used an SSH key instead to create the cluster, you must set a password for your SSH user. You will need this password when connecting to RStudio. Run the following commands. When prompted for **Current Kerberos password**, just press **ENTER**.
+
+        passwd remoteuser
+        Current Kerberos password:
+        New password:
+        Retype new password:
+        Current Kerberos password:
+        
+    If your password is successfully set, you should see a message like this.
+
+        passwd: password updated successfully
+
+
+    Exit the SSH session.
+
+6. Create an SSH tunnel to the cluster by mapping `localhost:8787` on the HDInsight cluster to the client machine. You must create an SSH tunnel before opening a new browser session.
+
+    * On a Linux client or a Windows client (using [Cygwin](http://www.redhat.com/services/custom/cygwin/)), open a terminal session and use the following command.
+
+            ssh -L localhost:8787:localhost:8787 USERNAME@r-server.CLUSTERNAME-ssh.azurehdinsight.net
+            
+        Replace **USERNAME** with an SSH user for your HDInsight cluster, and replace **CLUSTERNAME** with the name of your HDInsight cluster       
+
+    * On a Windows client create an SSH tunnel PuTTY.
+
+        1.  Open PuTTY, and enter your connection information. If you are not familiar with PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows](hdinsight-hadoop-linux-use-ssh-windows.md) for information on how to use it with HDInsight.
+        2.  In the **Category** section to the left of the dialog, expand **Connection**, expand **SSH**, and then select **Tunnels**.
+        3.  Provide the following information on the **Options controlling SSH port forwarding** form:
+
+            * **Source port** - The port on the client that you wish to forward. For example, **8787**.
+            * **Destination** - The destination that must be mapped to the local client machine. For example, **localhost:8787**.
+
+            ![Create an SSH tunnel](./media/hdinsight-hadoop-r-server-install-r-studio/createsshtunnel.png "Create an SSH tunnel")
+
+        4. Click **Add** to add the settings, and then click **Open** to open an SSH connection.
+        5. When prompted, log in to the server. This will establish an SSH session and enable the tunnel.
+
+7. Open a web browser and enter the following URL based on the port you entered for the tunnel.
+
+        http://localhost:8787/ 
+
+8. You will be prompted to enter the SSH username and password to connect to the cluster. If you used an SSH key while creating the cluster, you must enter the password you created in step 5 above.
+
+    ![Connect to R Studio](./media/hdinsight-hadoop-r-server-install-r-studio/connecttostudio.png "Create an SSH tunnel")
+
+9. To test whether the RStudio installation was successful, you can run a test script that executes R based MapReduce and Spark jobs on the cluster. Go back to the SSH console and enter the following commands to download the test script to run in RStudio.
+
+    * If you created a Hadoop cluster with R, use this command.
+        
+            wget http://mrsactionscripts.blob.core.windows.net/rstudio-server-community-v01/testhdi.r
+
+    * If you created a Spark cluster with R, use this command.
+
+            wget http://mrsactionscripts.blob.core.windows.net/rstudio-server-community-v01/testhdi_spark.r
+
+10. In RStudio, you will see the test script you downloaded. Double click the file to open it, select the contents of the file, and then click **Run**. You should see the output in the **Console** pane.
+ 
+    ![Test the installation](./media/hdinsight-hadoop-r-server-install-r-studio/test-r-script.png "Test the installation")
