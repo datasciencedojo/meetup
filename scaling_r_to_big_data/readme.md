@@ -18,6 +18,8 @@ Folder: scaling\_r\_to\_big\_data
 
 ## Setting up an R Cluster
 
+Source: [Microsoft](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-r-server-get-started/ )
+
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
 2. Select __NEW__, __Data + Analytics__, and then __HDInsight__.
@@ -81,3 +83,21 @@ Folder: scaling\_r\_to\_big\_data
     | ![Creating indicator on startboard](/scaling_r_to_big_data/media/provisioning.png) | ![Created cluster tile](/scaling_r_to_big_data/media/provisioned.png) |
 
     > [AZURE.NOTE] It will take some time for the cluster to be created, usually around 15~40 minutes. Use the tile on the Startboard, or the **Notifications** entry on the left of the page to check on the creation process.
+
+### SSH Into Edge Node
+Please be aware that R Server is not installed on the head/master/name node, but on the edge node
+
+1. Find the edge node SSH address by selecting your cluster then, __All Settings__, __Apps__, and __RServer__. Copy the SSH endpoint.
+
+    ![Image of the SSH Endpoint for the edge node](./media/hdinsight-getting-started-with-r/sshendpoint.png)
+
+2. Connect to the edge node using an SSH client.
+    * [Windows: Putty](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [Mac or Linux: ssh client in terminal](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+
+3. Enter your SSH username and password.
+
+4. Type R within the console to begin. Capital R.
+```
+R
+```
