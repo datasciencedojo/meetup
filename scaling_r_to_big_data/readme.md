@@ -249,4 +249,30 @@ airOnTimeDataLocal <- RxTextData(source, colInfo = airlineColInfo, varsToKeep = 
 
 # formula to use
 formula = "ARR_DEL15 ~ ORIGIN + DAY_OF_WEEK + DEP_TIME + DEST"
+
+# Set a Spark compute context
+myContext <- RxSpark()
+rxSetComputeContext(myContext)   
+
+# Run a logistic regression
+system.time(
+    myModel <- rxLogit(formula, data = airOnTimeDataLocal)
+)
+# Display a summary 
+summary(myModel)
+
+# Random forest
+# Help: http://www.rdocumentation.org/packages/RevoScaleR/functions/rxDForest
+system.time(
+    myModel <- rxDForest(formula, data = airOnTimeDataLocal)
+)
+# Display a summary 
+summary(myModel)
+
+# Other Models: http://www.rdocumentation.org/packages/RevoScaleR
+
+myModel.Forest <- as.randomForest(myModel)
+
+# Saving your forest
+save(myModel.Forest,file = "awesomeModel.RData")
 ```
