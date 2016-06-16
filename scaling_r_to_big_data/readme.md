@@ -6,7 +6,7 @@ Meetup Page: [http://www.meetup.com/data-science-dojo/events/231449206/](http://
 * Azure subscription or free trial account
 	* [30 day free trial](https://azure.microsoft.com/en-us/pricing/free-trial/)
 * Text Editor, I'll be using [Sublime Text 3]()
-* Github.com account (to recieve code)
+* [Github.com](https://github.com/) account (to recieve code)
 * PowerBI.com account (for Dashboard portion)
 * .NET up to date + windows (for testing portion)
 
