@@ -5,10 +5,11 @@ Meetup Page: [http://www.meetup.com/data-science-dojo/events/231449206/](http://
 ## Requirements
 * Azure subscription or free trial account
 	* [30 day free trial](https://azure.microsoft.com/en-us/pricing/free-trial/)
-* Text Editor, I'll be using [Sublime Text 3]()
 * [Github.com](https://github.com/) account (to recieve code)
-* PowerBI.com account (for Dashboard portion)
-* .NET up to date + windows (for testing portion)
+* Text Editor, I'll be using [Sublime Text 3](https://www.sublimetext.com/3)
+* [R Installed](https://cran.r-project.org/bin/windows/base/)
+* [RStudio](https://www.rstudio.com/products/rstudio/download/)
+* Windows Only: [Putty](https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe)
 
 ## Cloning the Repo for Code & Materials
 ```
@@ -244,9 +245,41 @@ varNames <- names(airlineColInfo)
 
 # Define the text data source in hdfs
 airOnTimeData <- RxTextData(inputDir, colInfo = airlineColInfo, varsToKeep = varNames, fileSystem = hdfsFS)
-# Define the text data source in local system
-airOnTimeDataLocal <- RxTextData(source, colInfo = airlineColInfo, varsToKeep = varNames)
 
 # formula to use
 formula = "ARR_DEL15 ~ ORIGIN + DAY_OF_WEEK + DEP_TIME + DEST"
+
+# Set a Spark compute context
+myContext <- RxSpark()
+rxSetComputeContext(myContext)   
+
+# Run a logistic regression
+system.time(
+    myModel <- rxLogit(formula, data = airOnTimeData)
+)
+# Display a summary 
+summary(myModel)
+
+# Random forest
+# Help: http://www.rdocumentation.org/packages/RevoScaleR/functions/rxDForest
+system.time(
+    myModel <- rxDForest(formula, data = airOnTimeData)
+)
+# Display a summary 
+summary(myModel)
+
+# Other Models: http://www.rdocumentation.org/packages/RevoScaleR
+
+# Converts the distributed forest to a normal random forest
+myModel.Forest <- as.randomForest(myModel)
+
+# Saving your forest
+save(myModel.Forest,file = "awesomeModel.RData")
+```
+
+Download the RDATA file. Load it to your local machine.
+```
+# install.packages(randomForest)
+library(randomForest)
+my.local.forest <- load("awesomeModel.RData")
 ```
