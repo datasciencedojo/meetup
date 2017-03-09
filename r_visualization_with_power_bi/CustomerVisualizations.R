@@ -87,9 +87,11 @@ ggplot(customer.categories, aes(x = reorder(CustomerCategoryName, TotalRevenue),
 library(dplyr)
 library(qcc)
 
+# Grab year variables
 Year1 <- min(dataset$Year)
 Year2 <- max(dataset$Year)
 
+# Accumulate totals
 totals <- dataset %>%
   filter(Year == Year1| Year == Year2 ) %>%
   group_by(Year, Month) %>%
@@ -101,17 +103,13 @@ Revenue.Group.1 <- totals$TotalRevenue[1:12]
 Revenue.Group.2 <- totals$TotalRevenue[13:24]
 
 title.str <- paste("Process Behavior Chart - ", Year1, " and ", Year2, " ",
-                   dataset$CustomerCategoryName[1], " Total Revnue for Buying Group '",
+                   dataset$CustomerCategoryName[1], " Total Revenue for Buying Group '",
                    dataset$BuyingGroupName[1], "'", sep = "")
 
+# Plot
 blank.super.qcc <- qcc(Revenue.Group.1, type = "xbar.one",
                        newdata = Revenue.Group.2,
                        labels = totals$Label[1:12], 
                        newlabels = totals$Label[13:24],
                        title = title.str,
                        ylab = "Total Revenue", xlab = "Month-Year")
-
-
-
-
-
