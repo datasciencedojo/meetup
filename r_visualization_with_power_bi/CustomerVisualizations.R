@@ -34,11 +34,10 @@ load("CustomerData.RData")
 # Preprocessing to make dataset look like Power BI
 library(dplyr)
 library(lubridate)
-dataset <- dataset %>%
-  mutate(BuyingGroupName = ifelse(is.na(BuyingGroupName), "", BuyingGroupName),
-         Year = year(dataset$OrderDate),
+dataset <- dataset %>% 
+  mutate(Year = year(dataset$OrderDate),
          Month = month(dataset$OrderDate, label = TRUE))
-         
+
 
 #=============================================================================
 #
@@ -60,7 +59,9 @@ customer.categories <- dataset %>%
 # Format visualization title string dynamically
 title.str.1 <- paste("Total Revenue for",
                      dataset$Year[1],
-                     "by Customer Category and Buying Group", 
+                     "by Customer Category and Buying Group for",
+                     nrow(dataset),
+                     "Rows of Data",
                      sep = " ")
 
 
@@ -80,10 +81,18 @@ ggplot(customer.categories, aes(x = reorder(CustomerCategoryName, TotalRevenue),
 
 #=============================================================================
 #
-# Visualization #2 - Aggregaed dynamic bar charts by Customer Category
+# Visualization #2 - Aggregated Process Behavior Charts
 #
 #=============================================================================
 
+
+# Add artificial filtering for example
+dataset <- dataset %>%
+  filter(is.na(BuyingGroupName) & 
+         (Year == 2013 | Year == 2014))
+
+
+# Power BI code starts here
 library(dplyr)
 library(qcc)
 
