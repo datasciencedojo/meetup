@@ -1,6 +1,6 @@
 # Introduction to R Visualizations in Microsoft Power BI
 
-GitHub Repository for the 03/15/2017 Meetup titled "[Introduction to R Visualizations in Microsoft Power BI](https://www.meetup.com/Data-Science-Dojo-Toronto/events/237952698/)".
+GitHub Repository for the 03/15/2017 and 04/05/2017 Meetups titled "Introduction to R Visualizations in Microsoft Power BI. First held in [Toronto](https://www.meetup.com/Data-Science-Dojo-Toronto/events/237952698/)" and subsequently in [Redmond](https://www.meetup.com/data-science-dojo/events/237941790/).
 
 These materials make extensive use of Microsoft's [Wide World Importers](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) SQL Server 2016 sample database.
 
