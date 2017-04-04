@@ -50,31 +50,47 @@ library(ggplot2)
 library(scales)
 
 
-# Get total revenue by Buying Group and Customer Catetory
+# Get total revenue by Buying Group, Supplier Category and Customer Catetory
 customer.categories <- dataset %>%
+  group_by(BuyingGroupName, SupplierCategoryName, CustomerCategoryName) %>%
+  summarize(TotalRevenue = sum(LineTotal))
+
+# Aggregate data across all supplier categories
+all.suppliers <- dataset %>%
   group_by(BuyingGroupName, CustomerCategoryName) %>%
   summarize(TotalRevenue = sum(LineTotal))
+all.suppliers$SupplierCategoryName <- "All Suppliers"
+
+# Add aggregated data
+customer.categories <- rbind(customer.categories,
+                             all.suppliers)
 
 
 # Format visualization title string dynamically
 title.str.1 <- paste("Total Revenue for",
                      dataset$Year[1],
-                     "by Customer Category and Buying Group for",
+                     "by Buying Group and Supplier/Customer Categories for",
                      nrow(dataset),
                      "Rows of Data",
                      sep = " ")
 
 
 # Plot 
-ggplot(customer.categories, aes(x = reorder(CustomerCategoryName, TotalRevenue), y = TotalRevenue, fill = BuyingGroupName)) +
+ggplot(customer.categories, aes(x = CustomerCategoryName, y = TotalRevenue, fill = BuyingGroupName)) +
   theme_bw() +
   coord_flip() +
+  facet_grid(BuyingGroupName ~ SupplierCategoryName) +
   geom_bar(stat = "identity") +
   scale_y_continuous(labels = comma) +
+  theme(text = element_text(size = 18),
+        axis.text.x = element_text(size = 12, angle=90, hjust=1)) +
   labs(x = "Customer Category",
        y = "Total Revenue",
        fill = "Buying Group",
        title = title.str.1)
+
+
+
 
 
 
@@ -121,4 +137,5 @@ blank.super.qcc <- qcc(Revenue.Group.1, type = "xbar.one",
                        labels = totals$Label[1:12], 
                        newlabels = totals$Label[13:24],
                        title = title.str,
-                       ylab = "Total Revenue", xlab = "Month-Year")
+                       ylab = "Total Revenue", xlab = "Month-Year",
+                       cex = )
