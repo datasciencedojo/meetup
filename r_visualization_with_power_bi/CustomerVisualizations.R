@@ -119,9 +119,12 @@ Year2 <- max(dataset$Year)
 # Accumulate totals
 totals <- dataset %>%
   filter(Year == Year1| Year == Year2 ) %>%
-  group_by(Year, Month) %>%
+  mutate(Month = substr(Month, 1, 3),
+         MonthNum =  match(Month, month.abb)) %>%
+  group_by(Year, MonthNum, Month) %>%
   summarize(TotalRevenue = sum(LineTotal)) %>%
-  mutate(Label = paste(Month, Year, sep = "-"))
+  mutate(Label = paste(Month, Year, sep = "-")) %>%
+  arrange(Year, MonthNum)
 
 # Make labels pretty with dummy vars
 Revenue.Group.1 <- totals$TotalRevenue[1:12]
@@ -137,5 +140,4 @@ blank.super.qcc <- qcc(Revenue.Group.1, type = "xbar.one",
                        labels = totals$Label[1:12], 
                        newlabels = totals$Label[13:24],
                        title = title.str,
-                       ylab = "Total Revenue", xlab = "Month-Year",
-                       cex = )
+                       ylab = "Total Revenue", xlab = "Month-Year")
