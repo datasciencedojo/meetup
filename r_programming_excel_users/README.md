@@ -6,6 +6,7 @@ These materials make extensive use of Kaggle's [Titanic: Machine Learning from D
 
 Additionally, the following are required to use the files for the Meetup:
 
+* [Microsoft Excel](www.microsoftstore.com/Excel)
 * [The R programming language](https://cran.rstudio.com/)
 * [RStudio](https://www.rstudio.com/products/rstudio/download/)
 * The following R packages: [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html) and [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html).
