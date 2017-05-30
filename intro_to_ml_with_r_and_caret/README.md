@@ -2,7 +2,7 @@
 
 GitHub Repository for the 06/07/2017 Meetup titled "An Introduction to Machine Learning with R and caret". First held in [Redmond, WA](https://www.meetup.com/data-science-dojo/events/239730653/).
 
-These materials make extensive use of Microsoft's [Wide World Importers](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) SQL Server 2016 sample database.
+These materials make use of the data from Kaggle's [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic) competition.
 
 Additionally, the following are required to use the files for the Meetup:
 
