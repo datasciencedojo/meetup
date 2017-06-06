@@ -39,6 +39,7 @@ train$Embarked[train$Embarked == ""] <- "S"
 
 
 # Add a feature for tracking missing ages.
+summary(train$Age)
 train$MissingAge <- ifelse(is.na(train$Age),
                            "Y", "N")
 
@@ -60,6 +61,7 @@ features <- c("Survived", "Pclass", "Sex", "Age", "SibSp",
               "Parch", "Fare", "Embarked", "MissingAge",
               "FamilySize")
 train <- train[, features]
+str(train)
 
 
 
@@ -71,10 +73,19 @@ train <- train[, features]
 # Caret supports a number of mechanism for imputing (i.e., 
 # predicting) missing values. Leverage bagged decision trees
 # to impute missing values for the Age feature.
-pre.process <- preProcess(train[, -1],
-                          method = "bagImpute")
-train$Age <- (predict(pre.process, train[, -1]))$Age
 
+# First, transform all feature to dummy variables.
+dummy.vars <- dummyVars(~ ., data = train[, -1])
+train.dummy <- predict(dummy.vars, train[, -1])
+View(train.dummy)
+
+# Now, impute!
+pre.process <- preProcess(train.dummy, method = "bagImpute")
+imputed.data <- predict(pre.process, train.dummy)
+View(imputed.data)
+
+train$Age <- imputed.data[, 6]
+View(train)
 
 
 
@@ -126,6 +137,7 @@ tune.grid <- expand.grid(eta = c(0.05, 0.075, 0.1),
                          colsample_bytree = c(0.3, 0.4, 0.5),
                          gamma = 0,
                          subsample = 1)
+View(tune.grid)
 
 
 # Use the doSNOW package to enable caret to train in parallel.
@@ -162,6 +174,6 @@ caret.cv
 preds <- predict(caret.cv, titanic.test)
 
 
-# Use carets confusionMatrix() function to estimate the 
+# Use caret's confusionMatrix() function to estimate the 
 # effectiveness of this model on unseen, new data.
 confusionMatrix(preds, titanic.test$Survived)
